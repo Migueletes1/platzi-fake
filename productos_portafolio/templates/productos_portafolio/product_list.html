@@ -38,6 +38,11 @@
               Precio: ${{ producto.price }}<br />
               Categoría: {{ producto.category.name }}
             </p>
+            <div class="d-flex justify-content-between mt-3">
+              <a href="{% url 'productos_portafolio:product_edit' product_id=producto.id %}" class="btn btn-warning btn-sm">Editar</a>
+              
+              <a href="{% url 'productos_portafolio:product_delete' product_id=producto.id %}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?');">Eliminar</a>
+            </div>
           </div>
         </div>
       </div>
